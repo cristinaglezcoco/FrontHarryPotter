@@ -1,0 +1,12 @@
+section.sctn-houses {
+    width: 100%;
+    // min-height: 100vh;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    padding: 50px;
+}

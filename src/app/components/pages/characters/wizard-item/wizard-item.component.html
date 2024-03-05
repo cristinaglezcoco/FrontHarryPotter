@@ -1,0 +1,9 @@
+<article class="character" [ngClass]="userWizard.casaNombre ? userWizard.casaNombre : userWizard.rol" [routerLink]="'/wizard/detail/' + userWizard._id">
+    <div></div>
+    <img *ngIf="userWizard.casaNombre" [src]="'../../../../../assets/shields-houses/' + userWizard.casaNombre.toLowerCase() + '.png'" alt="" class="shield-house">
+    <img [src]="userWizard.picture" alt="" class="character-picture">
+    <p>
+        <span>{{ userWizard.nombre }}</span>
+        <span>{{ userWizard.apellido }}</span>
+    </p>    
+</article>

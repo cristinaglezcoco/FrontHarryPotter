@@ -1,0 +1,79 @@
+<app-header></app-header>
+<section class="sctn-myarea">
+    <div *ngIf="arrayWizardsInfo.length > 0">
+        <article class="container-info" *ngFor="let wizardData of arrayWizardsInfo">
+            <div class="banner" [ngClass]="wizardData.wizardData.wizardHouse.toLowerCase()"></div>
+            <h2>
+                <span>{{wizardData.wizardData.wizardName}}</span>
+                <span>{{wizardData.wizardData.wizardLastName}}</span>
+            </h2>
+            <div class="shield" [ngClass]="wizardData.wizardData.wizardHouse">
+                <img [src]="'../../../../assets/shields-houses/' + wizardData.wizardData.wizardHouse.toLowerCase() + '.png'" alt="">
+            </div>
+            
+            <div class="wizard-img"><img [src]="wizardData.wizardData.wizardPicture" alt=""></div>
+            <ul class="info-list">
+                <li>{{wizardData.wizardData.wizardRol}}</li>
+                <li>{{wizardData.wizardData.wizardGroup}}</li>
+                <li>{{wizardData.wizardData.wizardBlood}}</li>
+                <li>{{wizardData.wizardData.wizardPatronus}}</li>
+            </ul>   
+
+            <!-- <button (click)="removeWizard(wizardData.wizardData._id)" class="btn-remove">Eliminar</button> -->
+            <button (click)="removeWizard(wizardData.wizardData._id)" (click)="deleteWizardIdToUser(userID, wizardData.wizardData._id)" class="btn-remove">Eliminar</button>
+        </article>
+    </div>
+    
+    
+    <article class="container-form">
+        <form action="" (submit)="sendForm()">
+            <!---->
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" [(ngModel)]="nameInput" name="name">
+            <!---->
+            <label for="lastname">Apellido:</label>
+            <input type="text" id="lastname" [(ngModel)]="lastNameInput" name="lastname">
+            <!---->
+            <label for="rol">Rol:</label>
+            <select name="rol" id="rol" [(ngModel)]="rolInput">
+                <option value="Alumno">Alumno</option>
+                <option value="Mortífago">Mortífago</option>
+            </select>
+            <!---->
+            <label for="house">Casa:</label>
+            <select name="house" id="house" [(ngModel)]="houseInput">
+                <option value="Gryffindor">Gryffindor</option>
+                <option value="Slytherin">Slytherin</option>
+                <option value="Ravenclaw">Ravenclaw</option>
+                <option value="Hufflepuff">Hufflepuff</option>
+            </select>
+            <!---->
+            <label for="blood">Sangre:</label>
+            <select name="blood" id="blood" [(ngModel)]="bloodInput">
+                <option value="Limpia">Limpia</option>
+                <option value="Mestiza">Mestiza</option>
+                <option value="Sucia">Sucia</option>
+                <option value="Squib">Squib</option>
+            </select>
+            <!---->
+            <label for="patronus">Patronus:</label>
+            <input type="text" id="patronus" [(ngModel)]="patronusInput" name="patronus">
+            <!---->
+            <label for="agrupacion">Agrupación:</label>
+            <select name="agrupacion" id="agrupacion" [(ngModel)]="agrupacionInput">
+                <option value="Ninguna">Ninguna</option>
+                <option value="Órden del Fénix">Órden del Fénix</option>
+                <option value="Ejército de Dumbledore">Ejército de Dumbledore</option>
+                <option value="Mortífagos">Mortífagos</option>
+                <option value="Ministerio">Ministerio</option>
+            </select>
+            <!---->
+            <label for="picture"></label> 
+            <input type="file" (change)="onFileSelected($event)" class="file"/>
+    
+            <span *ngIf="status === 'error'">{{message}}</span>
+            <span *ngIf="status === 'success'">{{message}}</span>
+            <button type="submit"><span>Enviar</span></button>
+        </form>
+    </article>
+</section>

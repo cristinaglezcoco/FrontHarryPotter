@@ -1,0 +1,25 @@
+section.sctn-books {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+    padding: 50px;
+}
+
+@media screen and (max-width: 819px) {
+    section.sctn-books {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    section.sctn-books {
+        gap: 20px;
+    }
+}

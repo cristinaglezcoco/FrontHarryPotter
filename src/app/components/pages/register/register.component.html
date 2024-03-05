@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container-register">
+    <form action="" (submit)="sendForm()">
+        <div>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" [(ngModel)]="nameInput" name="name">
+            <label for="lastname">Apellido:</label>
+            <input type="text" id="lastname" [(ngModel)]="lastNameInput" name="lastname">
+            <label for="sexo">Género:</label>
+            <select name="sexo" id="sexo" [(ngModel)]="sexoInput">
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+                <option value="Ninguno">Prefiero no decirlo</option>
+            </select>
+            <label for="email">Email:</label>
+            <input type="email" id="email" [(ngModel)]="emailInput" name="email">
+            <label for="password">Contraseña</label>
+            <div class="container__password">
+                <input [type]="!showPassword ? 'password' : 'text'" id="password" [(ngModel)]="passwordInput" name="password">
+                <img *ngIf="!showPassword" src="../../../../../assets/util_images/show-password.png" alt="" class="show" (click)="handleShowPassword()">
+                <img *ngIf="showPassword" src="../../../../../assets/util_images/hide-password.png" alt="" class="hide" (click)="handleShowPassword()">
+            </div>
+        </div>
+        <span *ngIf="status === 'error' ">{{message}}</span>
+        <span *ngIf="status === 'success' ">{{message}}</span>
+        <button type="submit"><span>Registrarse</span></button>
+    </form>
+    <button [routerLink]="['/login']" routerLinkActive="router-link-active" >Ya tengo cuenta</button>
+</div>

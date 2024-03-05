@@ -1,0 +1,10 @@
+<article [ngClass]="'container-book' + ' ' + (index % 2 === 1 ? ' odd' : '')" (click)="handleVisibilityInfo()">
+    <div class="container__img" [ngClass]="visibleInfo ? 'target' : ''" #animatedItem>
+        <img [src]="book.picture" alt="">
+    </div>
+    <div class="container__info" [ngClass]="visibleInfo ? 'target' : ''">
+        <h2 #animatedItemTwo>{{book.titulo}}</h2>
+        <p #animatedItemTwo>{{book.anio}}</p>
+        <p #animatedItemTwo>{{book.sinopsis}}</p>
+    </div>
+</article>

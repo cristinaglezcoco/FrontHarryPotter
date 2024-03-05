@@ -1,0 +1,27 @@
+<header class="container-nav" [ngClass]="ulVisibility ? 'hidden' : ''">
+    <nav class="container__list">
+        <ul class="first-list__links">
+            <li routerLink="/" class="home"><img src="../../../../assets/shields-houses/hogwarts-shield.png" alt=""></li>
+            <li [ngClass]="ulVisibility ? 'visible' : ''">
+                <ul class="second-list__links">
+                    <li routerLink="/houses">Casas</li>
+                    <li routerLink="/books">Libros</li>
+                    <li routerLink="/characters">Personajes</li>
+                    <li routerLink="/myarea">Área</li>
+                </ul>
+            </li>
+            <li (click)="handleUlVisibility()"><img src="../../../../assets/util_images/toggle-menu.png" alt=""></li>
+            <li *ngIf="!ifToken" routerLink="/login" class="log"><img src="../../../../assets/util_images/user.png" alt=""></li>
+            <li *ngIf="ifToken" (click)="logOut()" class="log"><img src="../../../../assets/util_images/logout.png" alt=""></li>
+            <!-- <li routerLink="/login" [ngClass]="ifToken ? 'hide' : '' ">Login</li> -->
+        </ul>
+    </nav>
+</header>
+<div class="menu-responsive" [ngClass]="ulVisibility ? 'visible' : ''">
+    <ul class="list__links">
+        <li (click)="handleUlVisibility()" routerLink="/houses">Casas</li>
+        <li (click)="handleUlVisibility()" routerLink="/books">Libros</li>
+        <li (click)="handleUlVisibility()" routerLink="/characters">Personajes</li>
+        <li (click)="handleUlVisibility()" routerLink="/myarea">Área</li>
+    </ul>
+</div>

@@ -1,0 +1,241 @@
+@import '../../../../../assets/colors/variables';
+
+form.finder-character {
+    width: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    margin: 0 auto;
+
+    &.visible {
+        transform: scale(0);
+    }
+
+    > label {
+        width:100%;
+        max-width: 270px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+
+        > span {
+            color: $font-color-night;
+        }
+
+        > input {
+            width: 100%;
+
+            background-color: $bg-night-mode;
+            border: none;
+            outline: none;
+            padding: 5px;
+            border-bottom: 2px solid $font-color-night;
+        }
+    }
+
+    > button {
+        background-color: $font-color-night;
+        color: $bg-night-mode;
+
+        border: none;
+        outline: none;
+
+        width: 70px;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+            width: 65px;
+            transition: all ease 0.5s;
+            box-shadow: inset 2px 2px 2px 2px #00000068;
+        }
+    }
+}
+
+form.container-filter {
+    width: 90%;
+
+    margin: 0px auto 20px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    
+    position: relative;
+    // > button {
+    //     width: 60px;
+    //     height: 60px;
+
+    //     outline: none;
+    //     border: none;
+    //     background-color: $font-color-night;
+    //     border-radius:  50%;
+    //     padding: 3px;
+    //     cursor: pointer;
+    //     position: relative;
+
+
+    //     &:hover {
+    //         transition: all ease 0.5s;
+    //         transform: scale(1.2);
+    //         border-radius: 15px;
+
+    //         &::before {
+    //             border-radius: 15px;
+    //         }
+    //     }
+
+    //     > img {
+    //         width: 100%;
+    //         height: 100%;
+
+    //         border-radius: 50%;
+    //         filter: invert(0);
+    //     }
+
+
+    //     &.Gryffindor {
+    //         background: linear-gradient(135deg, rgba(211,166,37,1) 0%, rgba(116,0,1,1) 25%, rgba(211,166,37,1) 50%, rgba(116,0,1,1) 75%, rgba(211,166,37,1) 100%);
+    //     }
+        
+    //     &.Slytherin {
+    //         background: linear-gradient(135deg, rgba(170,170,170,1) 0%, rgba(26,71,42,1) 35%, rgba(170,170,170,1) 50%, rgba(26,71,42,1) 65%, rgba(170,170,170,1) 100%);
+    //     }
+        
+        
+    //     &.Ravenclaw {
+    //         background: linear-gradient(135deg, rgba(190,190,190,1) 0%, rgba(34,47,91,1) 35%, rgba(190,190,190,1) 50%, rgba(34,47,91,1) 65%, rgba(190,190,190,1) 100%);
+    //     }
+        
+    //     &.Hufflepuff {
+    //         background: linear-gradient(135deg, rgba(114,98,85,1) 0%, rgba(240,199,94,1) 25%, rgba(114,98,85,1) 50%, rgba(240,199,94,1) 75%, rgba(114,98,85,1) 100%);
+    //     }
+
+    //     &::before {
+    //         content: "";
+    //         position: absolute;
+    //         top: 0;
+    //         left: 0;
+    //         width: 100%;
+    //         height: 100%;
+    //         background-color: rgba(0, 0, 0, 0.2); 
+    //         z-index: 2;
+    //         border-radius: 50%;
+    //     }
+        
+        
+    // }
+
+    > div.button-filters {
+        > button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: $font-color-night;
+
+            &:hover {
+                text-decoration: underline;
+                font-size: 14px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    > div.container-selects {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        width: 260px;
+        
+        > label {
+            color: $font-color-night;
+        }
+
+        &.visible {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+
+            &:nth-child(2) {
+                top: 40px;
+            }
+            &:nth-child(3) {
+                top: 70px;
+            }
+            &:nth-child(4) {
+                top: 100px;
+            }
+        }
+    }
+    
+
+    > div.container-buttons {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+
+        &.visible {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            top: 130px;
+        }
+
+        > button {
+            width: 110px;
+            height: 25px;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+    
+            background-color: transparent;
+            border: none;
+            outline: none;
+            background-color: $font-color-night;
+            color: $bg-night-mode;
+            border-radius: 15px;
+            
+            &:last-child {
+                > span {
+                    color: $bg-night-mode;
+                }
+            }
+    
+            > img {
+                width: 15%;
+                height: 70%;
+                filter: invert(1);
+            }
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 576px) {
+    // div.finder-house {
+    //     > button {
+    //         width: 35px;
+    //         height: 35px;
+    //     }
+    // }
+}

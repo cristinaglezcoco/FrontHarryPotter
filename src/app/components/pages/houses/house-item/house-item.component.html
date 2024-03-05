@@ -1,0 +1,12 @@
+<article [ngClass]="[house.nombre, 'animate-founders']" #animatedItem>
+    <div class="container-bg">
+        <img [src]="'../../../../../assets/founders/' + house.fundador.split(' ')[0].toLowerCase() + '.jpg'" alt="">
+    </div>
+    <div class="container-info">
+        <h2 #animatedItemTwo>{{house.fundador}}</h2>
+        <div class="container__relic">
+            <h4 #animatedItemTwo>Reliquia de la casa: {{house.reliquia}}</h4>
+            <img [src]="'../../../../../assets/founders/relics/' + house.reliquia.toLowerCase() + '.png'" alt="" [class]="house.reliquia.toLowerCase()" #animatedItem>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,39 @@
+<app-header></app-header>
+<section class="sctn-detail" [ngClass]="detailCharacter.casaNombre">
+    <h2>{{detailCharacter.nombre}}</h2>
+    <div class="container__picture">
+        <img [src]="detailCharacter.picture" alt="">
+    </div>
+    <ul class="detail-list">
+        <li>
+            <span>Casa: </span>
+            <span>{{detailCharacter.casaNombre}}</span>
+        </li>
+        <li>
+            <span>Forma del patronus: </span>
+            <span>{{detailCharacter.patronus}}</span>
+        </li>
+        <li>
+            <span>Horrocruxes: </span>
+            <span *ngIf="detailCharacter.horrocruxes && detailCharacter.horrocruxes.length === 0">No tiene</span>
+            <ul *ngIf="horrocruxImages && horrocruxImages.length > 0" class="horrocrux-list">
+                <li *ngFor="let horrocruxImageUrl of horrocruxImages">
+                  <img [src]="horrocruxImageUrl" alt="">
+                </li>
+            </ul>
+              
+            
+        </li>
+        <li>
+            <span>Agrupaciones: </span>
+            <span>{{ detailCharacter.agrupacion ? detailCharacter.agrupacion : 'Ninguna' }}</span>
+
+        </li>
+        <li>
+            <ul *ngFor="let sangre of detailCharacter.sangre">
+                <li>Sangre: {{sangre.tipo}}</li>
+                <li>{{sangre.descripcion}}</li>
+            </ul>
+        </li>
+    </ul>
+</section>

@@ -1,0 +1,4 @@
+<app-header></app-header>
+<section class="sctn-books">
+    <app-book-item *ngFor="let book of listBooks, index as i" [book]="book" [index]="i" #animatedItem></app-book-item>
+</section>

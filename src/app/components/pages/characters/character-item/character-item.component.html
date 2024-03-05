@@ -1,0 +1,9 @@
+<article class="character" [ngClass]="character.casaNombre ? character.casaNombre : character.rol" [routerLink]="'/character/detail/' + character._id">
+    <div></div>
+    <img *ngIf="character.casaNombre" [src]="'../../../../../assets/shields-houses/' + character.casaNombre.toLowerCase() + '.png'" alt="" class="shield-house">
+    <img [src]="character.picture" alt="" class="character-picture">
+    <p>
+        <span>{{ character.nombre.split(' ')[0] }}</span>
+        <span *ngIf="character.nombre.split(' ').length > 1">{{ character.nombre.split(' ')[1] }}</span>
+    </p>    
+</article>

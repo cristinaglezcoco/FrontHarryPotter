@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="container-login">
+    <form action="" (submit)="sendForm()">
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" [(ngModel)]="emailInput" name="email" required>
+            <label for="password">Contraseña</label>
+            <div class="container__password">
+                <input [type]="!showPassword ? 'password' : 'text'" id="password" [(ngModel)]="passwordInput" name="password" required>
+                <img *ngIf="!showPassword" src="../../../../../assets/util_images/show-password.png" alt="" class="show" (click)="handleShowPassword()">
+                <img *ngIf="showPassword" src="../../../../../assets/util_images/hide-password.png" alt="" class="hide" (click)="handleShowPassword()">
+            </div>
+            
+        </div>
+        
+        <span *ngIf="status === 'error'">{{message}}</span>
+        <button type="submit">
+            <span>Conectarse</span>
+        </button>
+    </form>
+    <button [routerLink]="['/register']" >¿Aún no tienes cuenta?</button>
+</div>

@@ -1,0 +1,14 @@
+<!-- character-list.component.html -->
+<app-header></app-header>
+<section class="sctn-characters">
+    <app-characters-finder style="width: 100%;" 
+        (searchName)="handleSearchName($event)" 
+        (resetFilters)="resetCharacters()" 
+        (formFilter)="handleFormFilters($event)">
+    </app-characters-finder>
+
+    <div>
+        <app-wizard-item *ngFor="let userWizard of listUserWizards" [userWizard]="userWizard" class="animated-char"></app-wizard-item>
+        <app-character-item *ngFor="let character of listCharacters" [character]="character" class="animated-char"></app-character-item>
+    </div> 
+</section>

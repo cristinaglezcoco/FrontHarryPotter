@@ -1,0 +1,269 @@
+@import '../../../../assets/colors/variables';
+
+
+section.sctn-myarea {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap:  wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 50px;
+
+    padding: 50px 20px;
+
+    > article.container-form {
+        width: 240px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        box-shadow: 0px 0px 10px 5px $font-color-night;
+        border-radius: 15px;
+        padding: 20px;
+    
+        > form {
+            width: 100%;
+            max-width: 240px;
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+    
+            > label, > input, > select {
+                width: 200px;
+                color: $font-color-night;
+                background-color: $bg-night-mode;
+                border: none;
+                outline: none
+            }
+    
+            > input {
+                border-bottom: 1px solid $font-color-night;
+                &.file {
+                    border: none;
+                }
+            }
+    
+            > select {
+                background-color: $bg-night-mode;
+                color: $font-color-night;
+                border: 1px solid $font-color-night;
+                border-radius: 15px;
+                outline: $font-color-night;
+                > option {
+                    color: $bg-night-mode;
+                }
+            }
+
+            > button {
+                width: 100px;
+                height: 20px;
+                background-color: $font-color-night;
+                position: relative;
+                border: none;
+                outline: none;
+                border-radius: 15px;
+                cursor: pointer;
+                margin-top: 20px;
+    
+                > span {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50;
+                    transform: translate(-50%, -40%);
+                    z-index: 2;
+                    color: $bg-night-mode;
+                }
+    
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 0;
+                    background-color: $bg-night-mode;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                }
+    
+                &:hover {
+                    > span {
+                        color: $font-color-night;
+                    }
+    
+                    &::before {
+                        transition: all ease .5s;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    > div:first-child {
+        width: 90%;
+        max-width: 600px;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 30px;
+        
+        article.container-info {
+            width: 200px;
+            height: 110px;
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 50px;
+    
+            overflow: hidden;
+            position: relative;
+    
+            > div.banner {
+                width: 100%;
+                height: 20px;
+                position: absolute;
+                top: 0; left: 0;
+                border-top-right-radius: 15px;
+                border-top-left-radius: 15px;
+    
+                &.gryffindor {
+                    background: linear-gradient(135deg, rgba(116,0,1,1) 0%, rgba(211,166,37,1) 25%, rgba(116,0,1,1) 50%, rgba(211,166,37,1) 75%, rgba(116,0,1,1) 100%);
+                }
+                
+                &.slytherin {
+                    background: linear-gradient(135deg, rgba(26,71,42,1) 0%, rgba(170,170,170,1) 35%, rgba(26,71,42,1) 50%, rgba(170,170,170,1) 65%, rgba(26,71,42,1) 100%);
+                }
+                
+                &.ravenclaw {
+                    background: linear-gradient(135deg, rgba(34,47,91,1) 0%, rgba(190,190,190,1) 35%, rgba(34,47,91,1) 50%, rgba(190,190,190,1) 65%, rgba(34,47,91,1) 100%);
+                }
+                
+                &.hufflepuff {
+                    background: linear-gradient(135deg, rgba(240,199,94,1) 0%, rgba(114,98,85,1) 25%, rgba(240,199,94,1) 50%, rgba(114,98,85,1) 75%, rgba(240,199,94,1) 100%);
+                }
+                
+            }
+    
+            > h2 {
+                font-weight: bold;
+                color: $font-color-night;
+    
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                transform: translateY(-50%);
+    
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 10px;
+
+                font-size: smaller;
+            }
+    
+            > div.shield {
+                width: 20px;
+                height: 23px;
+    
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 1px solid $bg-night-mode;
+                border-radius: 50%;
+                background-color: $font-color-night;
+    
+                > img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    filter: invert(1);
+                }
+            }
+    
+            > div.wizard-img {
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+    
+                > img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+    
+            > ul.info-list {
+                width: 200px;
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 5px;
+    
+                transform: scale(0) translateY(-50%);
+    
+                > li {
+                    font-weight: bold;
+                    color: $font-color-night;
+                    font-size: 10px;
+                }
+            }
+
+            > button.btn-remove {
+                width: 60px;
+                height: 25px;
+
+                border: none;
+                outline: none;
+                border-radius: 15px;
+                background-color: $font-color-night;
+                color: $bg-night-mode;
+
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+    
+            &:hover {
+                > h2 {
+                    display: none;
+                }
+                > ul.info-list {
+                    transition: all ease 1s;
+                    transform: scale(1) translateY(-50%);
+
+                }
+            }
+        }
+    }
+}  
+
+@media screen and (min-height: 1100px) {
+    section.sctn-myarea {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+}

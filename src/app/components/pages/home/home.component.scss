@@ -1,0 +1,245 @@
+@import '../../../../assets/colors/variables';
+
+main.container-sections {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    background-color: $bg-night-mode; 
+    padding: 0px 0 50px;
+
+    div.container-intro {
+        width: 100%;
+        max-width: 920px;
+
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-self: center;
+
+        position: relative;
+
+        /* Definición del box-shadow inicial */
+        box-shadow: none;
+
+        /* Animación que añade el box-shadow después de 3 segundos */
+        animation-name: showBoxShadow;
+        animation-duration: 1s; /* Duración de la animación */
+        animation-delay: 3s; /* Retraso de 3 segundos */
+        animation-fill-mode: forwards; /* El elemento se queda en el estado final de la animación */
+
+        @keyframes showBoxShadow {
+            from {
+              box-shadow: none; /* El box-shadow inicial es ninguno */
+            }
+            to {
+              box-shadow: 0px 0px 20px 5px $font-color-night; /* El box-shadow final */
+            }
+          }
+
+        img {
+            width: 184px;
+            height: 100px;
+            filter: brightness(0.5); 
+            transform: scale(1);
+          }
+          
+        
+        > h1.title {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-100%);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
+
+            > span {
+                color: $bg-night-mode;
+                font-size: 40px;
+
+                &:last-child {
+                    font-size: 80px;
+                }
+            }
+        }
+    }
+
+    div.container-gallery {
+        display: none;
+    }
+}
+
+@media screen and ( max-width: 1024px) {
+    main.container-sections {
+        position: relative;
+
+        div.container-intro {
+            position: static;
+            box-shadow: none;
+            animation: none;
+
+            > img {
+                display: none;
+            }
+
+            > h1.title {
+                position: absolute;
+                top: 250px;
+                left: 10%;
+                > span {
+                    color: $bg-night-mode;
+                    text-shadow: 0 0 10px $neon-effect, 0 0 20px $neon-effect, 0 0 30px $neon-effect, 0 0 40px $neon-effect; 
+                }
+            }  
+        }
+
+        div.container-gallery {
+            width: 70%;
+            max-width: 300px;
+            display: block;
+            position: relative;
+
+            > img {
+                width: 300px;
+                height: 150px;
+                position: absolute;
+                top: 300px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 15px;
+                opacity: 0;
+                
+                &.show {
+                    transition: all ease 1s;
+                    opacity: 1;
+                    box-shadow: 0px 0px 10px 5px $font-color-night;
+                }
+            }
+
+            > div.slide-buttons {
+                width: 200px;
+                height: 50px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 50px;
+
+                position: absolute;
+                top: 500px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                > button {
+                    width: 30px;
+                    height: 30px;
+                    border: none;
+                    outline: none;
+                    border-radius: 50%;
+                    background-color: transparent;
+
+                    &:hover {
+                        box-shadow: 0px 0px 10px 5px $font-color-night;
+                        transition: all ease 0.5s;
+                        background-color: $font-color-night;
+                        
+                        > img {
+                            filter: invert(1);
+                        }
+                    }
+
+                    > img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        filter: invert(0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    main.container-sections {
+        div.container-intro {
+            > h1.title {
+                > span {
+                    font-size: larger;
+                    &:last-child {
+                        font-size: 60px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-height: 850px) and (max-height: 1024px) {
+    main.container-sections {
+        div.container-intro {
+            > h1.title {
+                top: 350px;
+            }
+        }
+
+        div.container-gallery {
+            > img {
+                top: 450px;
+            }
+            > div.slide-buttons {
+                top: 650px;
+            }
+        }
+    }
+}
+
+@media screen and (min-height: 1025px){
+    main.container-sections {
+        div.container-intro {
+            > h1.title {
+                top: 400px;
+            }
+        }
+
+        div.container-gallery {
+            > img {
+                top: 500px;
+                width: 500px;
+                height: 300px;
+            }
+            > div.slide-buttons {
+                top: 850px;
+            }
+        }
+    }
+}
+
+@media screen and (min-height: 1200px){
+    main.container-sections {
+        div.container-intro {
+            > h1.title {
+                top: 500px;
+            }
+        }
+
+        div.container-gallery {
+            > img {
+                top: 600px;
+                width: 500px;
+                height: 300px;
+            }
+            > div.slide-buttons {
+                top: 950px;
+            }
+        }
+    }
+}
+

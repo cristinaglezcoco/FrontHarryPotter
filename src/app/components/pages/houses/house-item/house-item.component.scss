@@ -1,0 +1,89 @@
+@import '../../../../../assets/colors/variables';
+
+article {
+    width: 250px;
+    height: 365px;
+
+    position: relative;
+    border-radius: 15px;
+
+    > div.container-bg {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        border-radius: 15px;
+
+        > img {
+            width: 100%;
+            height: 100%;
+            filter: grayscale(.2);
+            border-radius: 15px;
+        }
+    }
+
+    > div.container-info {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: #0000004c;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px 10px;
+        border-radius: 15px;
+
+        > h2 {
+            font-weight: bold;
+            color: $bg-night-mode;
+        }
+
+        > div.container__relic {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 80px;
+            
+            > h4 {
+                font-weight: bold;
+                color: $bg-night-mode;
+            }
+
+            > img {
+                align-self: center;
+
+                &.espada {
+                    width: 120px;
+                    height: 170px;
+                }
+                &.guardapelo {
+                    width: 120px;
+                    height: 170px;
+                }
+                &.copa {
+                    width: 120px;
+                    height: 140px;
+                }
+                &.diadema {
+                    width: 120px;
+                    height: 105px;
+                }
+            }
+        }
+    }
+}

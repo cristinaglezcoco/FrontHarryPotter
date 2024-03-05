@@ -1,0 +1,233 @@
+@import "../../../../../../assets/colors/variables";
+
+section.sctn-detail {
+  width: 90%;
+  height: 400px;
+  max-width: 600px;
+
+  position: relative;
+  margin: 100px auto;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 5px $font-color-night;
+
+  > h2 {
+    font-weight: bold;
+    color: $bg-night-mode;
+
+    width: 90%;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3px;
+    border-bottom: 2px solid $bg-night-mode;
+  }
+
+  > div.container__picture {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    z-index: 3;
+    transform: translateY(-50%);
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  > ul.detail-list {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 55%;
+    right: 20px;
+    z-index: 3;
+    transform: translateY(-40%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    overflow-y: scroll;
+    padding-left: 50px;
+
+    > li {
+      font-weight: bold;
+      color: $bg-night-mode;
+
+      > ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 10px;
+
+        &.horrocrux-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            > li > img {
+                width: 40px; 
+                height: 40px;
+            }
+        }
+      }
+    }
+  }
+
+  &.Gryffindor {
+    background: linear-gradient(
+      135deg,
+      rgba(116, 0, 1, 1) 0%,
+      rgba(211, 166, 37, 1) 25%,
+      rgba(116, 0, 1, 1) 50%,
+      rgba(211, 166, 37, 1) 75%,
+      rgba(116, 0, 1, 1) 100%
+    );
+    box-shadow: 0px 0px 20px 5px rgba(116, 0, 1, 1);
+    &::before {
+        content: "";
+        position: absolute;
+        top: 33%;
+        left: 65%;
+        transform: translate(0%, -40%);
+        width: 50px;
+        height: 100px;
+        background-image: url('../../../../../../assets/shields-houses/gryffindor.png'); 
+        z-index: 2;
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: invert(.6);
+    }
+  }
+
+  &.Slytherin {
+    background: linear-gradient(
+      135deg,
+      rgba(26, 71, 42, 1) 0%,
+      rgba(170, 170, 170, 1) 35%,
+      rgba(26, 71, 42, 1) 50%,
+      rgba(170, 170, 170, 1) 65%,
+      rgba(26, 71, 42, 1) 100%
+    );
+    box-shadow: 0px 0px 20px 5px $font-color-night;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 33%;
+        left: 65%;
+        transform: translate(0%, -40%);
+        width: 50px;
+        height: 100px;
+        background-image: url('../../../../../../assets/shields-houses/slytherin.png'); 
+        z-index: 2;
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: invert(.6);
+    }
+  }
+
+  &.Ravenclaw {
+    background: linear-gradient(
+      135deg,
+      rgba(34, 47, 91, 1) 0%,
+      rgba(190, 190, 190, 1) 35%,
+      rgba(34, 47, 91, 1) 50%,
+      rgba(190, 190, 190, 1) 65%,
+      rgba(34, 47, 91, 1) 100%
+    );
+    box-shadow: 0px 0px 20px 5px rgba(34, 47, 91, 1);
+    &::before {
+        content: "";
+        position: absolute;
+        top: 33%;
+        left: 65%;
+        transform: translate(0%, -40%);
+        width: 50px;
+        height: 100px;
+        background-image: url('../../../../../../assets/shields-houses/ravenclaw.png'); 
+        z-index: 2;
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: invert(.6);
+    }
+  }
+
+  &.Hufflepuff {
+    background: linear-gradient(
+      135deg,
+      rgba(240, 199, 94, 1) 0%,
+      rgba(114, 98, 85, 1) 25%,
+      rgba(240, 199, 94, 1) 50%,
+      rgba(114, 98, 85, 1) 75%,
+      rgba(240, 199, 94, 1) 100%
+    );
+    box-shadow: 0px 0px 20px 5px rgba(240, 199, 94, 1);
+    &::before {
+        content: "";
+        position: absolute;
+        top: 33%;
+        left: 65%;
+        transform: translate(0%, -40%);
+        width: 50px;
+        height: 100px;
+        background-image: url('../../../../../../assets/shields-houses/hufflepuff.png'); 
+        z-index: 2;
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: invert(.6);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+    }
+
+    
+}
+
+@media screen and (max-width: 576px) {
+  section.sctn-detail {
+    height: 650px;
+    margin: 0 auto;
+
+    &.Gryffindor, &.Slytherin, &.Ravenclaw, &.Hufflepuff {
+      &::before {
+        top: 14%;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    > div.container__picture {
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    > ul.detail-list {
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      padding-left: 40px;
+    }
+  }
+}

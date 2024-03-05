@@ -1,0 +1,29 @@
+<app-header></app-header>
+<section class="sctn-detail" [ngClass]="detailWizard.casaNombre">
+    <h2>{{detailWizard.nombre}} {{detailWizard.apellido}}</h2>
+    <div class="container__picture">
+        <img [src]="detailWizard.picture" alt="">
+    </div>
+    <ul class="detail-list">
+        <li>
+            <span>Casa:</span>
+            <span> {{detailWizard.casaNombre}}</span>
+        </li>
+        <li>
+            <span>Forma del patronus:</span>
+            <span> {{detailWizard.patronus}}</span>
+        </li>
+        <li>
+            <span>Agrupaciones:</span>
+            <span> {{ detailWizard.agrupacion ? detailWizard.agrupacion : 'Ninguna' }}</span>
+        </li>
+        <li>
+            <span>Horrocruxes:</span>
+            <span> {{ detailWizard.horrocruxes > 0 ? detailWizard.horrocruxes : 'No tiene' }}</span>
+        </li>
+        <li>
+            <span>Sangre:</span>
+            <span> {{detailWizard.sangreTipo}}</span>
+        </li>
+    </ul>
+</section>
